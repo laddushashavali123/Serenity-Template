@@ -4,7 +4,7 @@ __The `serenity-cucumber-template` is a maven template for test automation proje
 This template uses selenium, cucumber and serenity to:
  1. automate browser actions,
  2. through gherkin style (given, when, then) feature files and
- 3. generate reports test-reports (-> mvn verify)
+ 3. generate test-reports (-> mvn verify)
 
 ---  
 
@@ -19,7 +19,7 @@ This template uses selenium, cucumber and serenity to:
  
 ---  
 
-Updated uptill 2018/11/27
+Updated uptill 2018/12/04
 ---  
 _This template is based on the maven serenity-cucumber-archetype, but that doesn't work out-of-the-box,  
 so I've adapted it a bit :)_

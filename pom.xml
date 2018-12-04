@@ -9,12 +9,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <!-- Updated to latest stable versions on: 4 DEC 2018 -->
+
         <!-- SERENITY -->
-        <!-- Latest stable versions on: 27 NOV 2018 -->
         <!-- see: https://mvnrepository.com/artifact/net.serenity-bdd/serenity-core -->
-        <serenity.version>2.0.18</serenity.version>
         <!-- see: https://mvnrepository.com/artifact/net.serenity-bdd/serenity-cucumber -->
-        <serenity.cucumber.version>1.9.20</serenity.cucumber.version>
+        <serenity.version>2.0.20</serenity.version>
+        <serenity.cucumber.version>1.9.21</serenity.cucumber.version>
 
         <!-- DRIVER -->
         <!-- get latest drivers from: https://www.seleniumhq.org/download/#thirdPartyDrivers -->
@@ -23,6 +24,14 @@
                 2. add property to failsafe plugin -->
         <webdriver.gecko.driver>src/test/resources/drivers/geckodriver</webdriver.gecko.driver>
         <webdriver.chrome.driver>src/test/resources/drivers/chromedriver</webdriver.chrome.driver>
+
+        <!-- PLUGINS -->
+        <!-- see: https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+        <!-- see: https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-failsafe-plugin -->
+        <!-- see: https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+        <maven.surefire.version>2.22.1</maven.surefire.version>
+        <maven.failsafe.version>${maven.surefire.version}</maven.failsafe.version>
+        <maven.compiler.version>3.8.0</maven.compiler.version>
     </properties>
 
     <packaging>jar</packaging>
@@ -82,7 +91,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
+                <version>${maven.surefire.version}</version>
                 <configuration>
                     <skip>true</skip>
                     <systemPropertyVariables>
@@ -91,7 +100,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.19.1</version>
+                <version>${maven.failsafe.version}</version>
                 <configuration>
                     <includes>
                         <include>**/*.java</include>
@@ -115,7 +124,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
+                <version>${maven.compiler.version}</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
